@@ -60,7 +60,8 @@ with lock:
             # get and remove env from clist
             # add code here
             # return env name
-            env = clist.remove(clist[0])
+            env = clist[0] # get 1st env in clist
+            clist.remove(env)   # remove env from clist
             print(env)
 
     # save hickle file
