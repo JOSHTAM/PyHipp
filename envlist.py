@@ -44,7 +44,9 @@ with lock:
         # prefix envprefix
         # add code here
         clist = []
-        for i in range(nenvs):
+        envprefix = sys.argv[1]
+        nenvs = sys.argv[2]
+        for i in range(int(nenvs)):
             clist.append(('{}{}').format(envprefix,i))
         
     else:
@@ -54,12 +56,14 @@ with lock:
         if pmode == WRITE_MODE:
             # append env to the clist
             # add code here
+            env = sys.argv[1]
             clist.append(env)
             
         else:
             # get and remove env from clist
             # add code here
             # return env name
+            env = sys.argv[1]
             clist.remove(env)
             print(env)
 
