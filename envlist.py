@@ -45,7 +45,7 @@ with lock:
         # add code here
         clist = []
         for i in range(int(nenvs)):
-            clist.append(('{}{}').format(envprefix,i))
+            clist.append(envprefix + str(i))
         
     else:
         # load hickle file
@@ -60,8 +60,7 @@ with lock:
             # get and remove env from clist
             # add code here
             # return env name
-            env = clist[0] # get 1st env in clist
-            clist.remove(env)   # remove env from clist
+            env = clist.pop(0)
             print(env)
 
     # save hickle file
